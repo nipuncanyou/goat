@@ -1,0 +1,75 @@
+<!-- S1 phone buzzing -->
+<g id="s1"><g id="cam1"><use href="#room"/><rect width="540" height="1170" fill="#1a0f0a" opacity=".5"/>
+  <use id="kid1" href="#kidDef"/>
+  %%B1%%
+</g></g>
+<!-- S3 title -->
+<g id="s3">
+  <rect width="540" height="1170" fill="url(#nightsky)"/><g id="stars"></g>
+  <g fill="#070914"><rect x="52" y="360" width="10" height="560"/><rect x="26" y="340" width="62" height="34" rx="4"/><rect x="478" y="360" width="10" height="560"/><rect x="452" y="340" width="62" height="34" rx="4"/>
+  <polygon points="0,880 0,760 120,730 120,790 420,790 420,730 540,760 540,880"/><rect y="880" width="540" height="290"/></g>
+  <circle cx="57" cy="358" r="90" fill="url(#glow)" opacity=".55"/><circle cx="483" cy="358" r="90" fill="url(#glow)" opacity=".55"/>
+  <text id="kicker3" x="270" y="300" font-size="19" text-anchor="middle" fill="#bfb7c9" class="mono" letter-spacing="5">PART 2 · WEEK ONE</text>
+  <g id="lines3" font-weight="900" text-anchor="middle" letter-spacing="-3">
+    <text x="270" y="440" font-size="86" fill="#f3eadb">EVERYONE</text><text x="270" y="552" font-size="118" fill="#f3eadb">KNOWS</text>
+    <text x="270" y="664" font-size="118" fill="#f3eadb">YOUR</text><text x="270" y="776" font-size="96" fill="#ff2d8a">NUMBER</text></g>
+</g>
+<!-- S4 asks + HUD -->
+<g id="s4"><g id="cam4"><use href="#room"/><rect width="540" height="1170" fill="#1a0f0a" opacity=".42"/>
+  <use id="kid4" href="#kidDef"/>
+  %%B4%%
+</g>
+<g id="hud"><g font-weight="700" fill="#f3eadb">
+  <rect x="14" y="58" width="168" height="62" rx="8" fill="#15101a" opacity=".92"/><rect x="190" y="58" width="150" height="62" rx="8" fill="#15101a" opacity=".92"/><rect x="348" y="58" width="178" height="62" rx="8" fill="#15101a" opacity=".92"/>
+  <text x="28" y="82" font-size="10" fill="#9a93a6" class="mono" letter-spacing="2">TAKE-HOME</text><text x="28" y="108" font-size="22">$530,000</text>
+  <text x="204" y="82" font-size="10" fill="#9a93a6" class="mono" letter-spacing="2">BANKED</text><text x="204" y="108" font-size="22">$0</text>
+  <text x="362" y="82" font-size="10" fill="#9a93a6" class="mono" letter-spacing="2">PRESSURE</text><text id="pressure" x="362" y="108" font-size="22">20%</text></g>
+  <rect x="14" y="132" width="86" height="22" rx="4" fill="#ff2d8a"/><text x="24" y="148" font-size="11" font-weight="700" fill="#fff" class="mono" letter-spacing="2">PROBLEM 2</text></g></g>
+<!-- S5 the circle -->
+<g id="s5"><rect width="540" height="1170" fill="#efe4d3"/>
+  <text x="270" y="262" font-size="16" text-anchor="middle" fill="#6b6256" class="mono" letter-spacing="5">PROBLEM 2 · THE CIRCLE</text>
+  <g id="faces"></g>
+  <text x="100" y="772" font-size="14" font-weight="700" fill="#6b6256" class="mono" letter-spacing="2">YOU KEEP</text>
+  <rect x="100" y="782" width="290" height="26" rx="4" fill="#8fb574" stroke="#1b1410" stroke-width="3"/>
+  <text x="400" y="803" font-size="20" font-weight="800" fill="#1b1410">$530K</text>
+  <text x="100" y="848" font-size="14" font-weight="700" fill="#6b6256" class="mono" letter-spacing="2">THEY ASK</text>
+  <rect id="askbar" x="100" y="858" width="0" height="26" rx="4" fill="#d9503f" stroke="#1b1410" stroke-width="3"/>
+  <text id="askv" x="100" y="879" font-size="20" font-weight="800" fill="#1b1410">$0K</text>
+  <text id="over" x="270" y="956" font-size="46" font-weight="900" text-anchor="middle" fill="#d9503f" letter-spacing="-1" opacity="0">OVER BUDGET</text>
+</g>
+<!-- S7 coach -->
+<g id="s7"><rect width="540" height="1170" fill="#2a2030"/><use href="#room" opacity=".35"/><rect width="540" height="1170" fill="#120c18" opacity=".55"/>
+  <g id="coach" transform="translate(270 520) scale(1.3)">
+    <g stroke-linecap="round"><path d="M-30 205L-34 296M30 205L34 296" stroke="#1b1410" stroke-width="42"/><path d="M-30 205L-34 296M30 205L34 296" stroke="#233a63" stroke-width="32"/></g>
+    <ellipse cx="-36" cy="308" rx="30" ry="13" fill="#f6f2e4" stroke="#1b1410" stroke-width="5"/><ellipse cx="36" cy="308" rx="30" ry="13" fill="#f6f2e4" stroke="#1b1410" stroke-width="5"/>
+    <path d="M-76 62Q0 44 76 62L92 214Q0 240 -92 214Z" fill="#2c4f8a" stroke="#1b1410" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M-22 70L-18 210M22 70L18 210" stroke="#f3eadb" stroke-width="7"/>
+    <ellipse cx="0" cy="58" rx="62" ry="20" fill="#233a63" stroke="#1b1410" stroke-width="6"/>
+    <g stroke-linecap="round"><path d="M-70 80L-92 160M70 80L92 160" stroke="#1b1410" stroke-width="36"/><path d="M-70 80L-92 160M70 80L92 160" stroke="#2c4f8a" stroke-width="26"/></g>
+    <circle cx="-92" cy="168" r="14" fill="#f3eed8" stroke="#1b1410" stroke-width="4"/><circle cx="92" cy="168" r="14" fill="#f3eed8" stroke="#1b1410" stroke-width="4"/>
+    <circle cx="0" cy="0" r="66" fill="#f3eed8" stroke="#1b1410" stroke-width="5"/>
+    <path d="M-62 -10Q-58 -62 0 -64Q58 -62 62 -10Q40 -40 0 -38Q-40 -40 -62 -10Z" fill="#b8b4ac" stroke="#1b1410" stroke-width="5" stroke-linejoin="round"/>
+    <circle cx="-24" cy="6" r="6" fill="#1b1410"/><circle cx="24" cy="6" r="6" fill="#1b1410"/>
+    <path d="M-34 -8Q-24 -16 -14 -8M14 -8Q24 -16 34 -8" fill="none" stroke="#1b1410" stroke-width="5" stroke-linecap="round"/>
+    <path d="M-26 30Q0 20 26 30Q0 40 -26 30Z" fill="#b8b4ac" stroke="#1b1410" stroke-width="4"/>
+    <path d="M-14 46q14 8 28 0" fill="none" stroke="#1b1410" stroke-width="5" stroke-linecap="round"/>
+    <path d="M-40 66L0 150L40 66" fill="none" stroke="#d9b25c" stroke-width="4"/><circle cx="0" cy="150" r="9" fill="#d9b25c" stroke="#1b1410" stroke-width="3"/>
+  </g>
+  <g id="quote" opacity="0"><rect x="50" y="170" width="440" height="110" rx="18" fill="#f3eadb" stroke="#1b1410" stroke-width="5"/>
+    <path d="M250 280l20 38l20-38z" fill="#f3eadb" stroke="#1b1410" stroke-width="5" stroke-linejoin="round"/><rect x="246" y="274" width="48" height="10" fill="#f3eadb"/>
+    <text x="270" y="216" font-size="13" font-weight="800" text-anchor="middle" fill="#ff2d8a" class="mono" letter-spacing="3">YOUTH COACH</text>
+    <text x="270" y="256" font-size="27" font-weight="800" text-anchor="middle" fill="#1b1410">Sign nothing without a lawyer.</text></g>
+</g>
+<!-- S6 hook: the driveway -->
+<g id="s6"><rect width="540" height="1170" fill="#0b0a14"/>
+  <rect y="760" width="540" height="410" fill="#15131f"/><path d="M0 760H540" stroke="#2a2740" stroke-width="4"/>
+  <g id="headl" opacity="0"><polygon points="140,640 -60,820 -60,560" fill="#fff6c8" opacity=".2"/><polygon points="400,640 600,820 600,560" fill="#fff6c8" opacity=".2"/></g>
+  <g id="car" transform="translate(270 640)">
+    <path d="M-210 90Q-214 40 -170 30L-120 -34Q-100 -56 -60 -58H70Q112 -58 130 -30L176 28Q214 38 214 90Z" fill="#1d1d2b" stroke="#3b3b55" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M-104 28L-70 -30Q-60 -38 -40 -38H70Q86 -38 94 -26L128 28Z" fill="#2e3350"/>
+    <circle cx="-120" cy="94" r="42" fill="#0b0a14" stroke="#3b3b55" stroke-width="8"/><circle cx="130" cy="94" r="42" fill="#0b0a14" stroke="#3b3b55" stroke-width="8"/>
+    <circle cx="-120" cy="94" r="16" fill="#5a5a78"/><circle cx="130" cy="94" r="16" fill="#5a5a78"/>
+    <rect x="-208" y="52" width="26" height="14" rx="6" fill="#fff6c8"/><rect x="186" y="52" width="26" height="14" rx="6" fill="#fff6c8"/>
+  </g>
+  <text x="270" y="1100" font-size="14" text-anchor="middle" fill="#6e6a88" class="mono" letter-spacing="4">TO BE CONTINUED…</text>
+</g>

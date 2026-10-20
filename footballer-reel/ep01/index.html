@@ -257,9 +257,26 @@
   <text x="270" y="962" font-size="12" text-anchor="middle" fill="#8a8173" class="mono" opacity=".95">illustrative figures · real deals vary</text>
 </g>
 
+<!-- ============ SCENE 6: hook ============ -->
+<g id="s6">
+  <rect width="540" height="1170" fill="#0b0a10"/>
+  <circle cx="270" cy="560" r="260" fill="url(#glow)" opacity=".18"/>
+  <g id="phone6">
+    <rect x="-96" y="-190" width="192" height="380" rx="26" fill="#111" stroke="#2a2a33" stroke-width="6"/>
+    <rect x="-84" y="-176" width="168" height="352" rx="16" fill="#9fe3ff"/>
+    <text x="0" y="-110" font-size="52" font-weight="900" text-anchor="middle" fill="#1b1410">27</text>
+    <text x="0" y="-80" font-size="11" text-anchor="middle" fill="#1b1410" class="mono" letter-spacing="2">NEW MESSAGES</text>
+    <g stroke="#1b1410" stroke-width="7" stroke-linecap="round" opacity=".35"><path d="M-56 -30H56M-56 0H56M-56 30H20M-56 70H56M-56 100H30"/></g>
+  </g>
+  <g id="b60"><rect width="170" height="50" rx="12" fill="#f3eadb" stroke="#1b1410" stroke-width="4"/><text x="12" y="20" font-size="10" font-weight="800" fill="#ff2d8a" class="mono" letter-spacing="2">COUSIN</text><text x="12" y="40" font-size="15" font-weight="700" fill="#1b1410">you up? quick favour</text></g>
+  <g id="b61"><rect width="170" height="50" rx="12" fill="#f3eadb" stroke="#1b1410" stroke-width="4"/><text x="12" y="20" font-size="10" font-weight="800" fill="#ff2d8a" class="mono" letter-spacing="2">OLD MATE</text><text x="12" y="40" font-size="15" font-weight="700" fill="#1b1410">remember me? 😄</text></g>
+  <g id="b62"><rect width="170" height="50" rx="12" fill="#f3eadb" stroke="#1b1410" stroke-width="4"/><text x="12" y="20" font-size="10" font-weight="800" fill="#ff2d8a" class="mono" letter-spacing="2">UNCLE</text><text x="12" y="40" font-size="15" font-weight="700" fill="#1b1410">business idea?</text></g>
+</g>
+
 <!-- captions -->
 <g id="cap" font-size="40" font-weight="800" text-anchor="middle" letter-spacing="-1">
-  <text id="capText" x="270" y="1000" stroke="#000" stroke-opacity=".35" stroke-width="6" paint-order="stroke"></text>
+  <text id="capShadow" x="270" y="1000" stroke="#000" stroke-width="7" stroke-linejoin="round" fill="#000" opacity="0"></text>
+  <text id="capText" x="270" y="1000"></text>
 </g>
 <rect id="flash" width="540" height="1170" fill="#fff" opacity="0"/>
 </svg>
@@ -271,7 +288,7 @@ const cl = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
 const seg = (t, a, b) => cl((t - a) / (b - a));
 const eo = x => 1 - Math.pow(1 - x, 3);
 const eb = x => { const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
-const DURATION = 19.6;
+const DURATION = 22.8;
 
 // ---- one-time builders -----------------------------------------------------
 (function build() {
@@ -317,8 +334,10 @@ const CAPS = [
   [8.2, 10.2, 'It starts now.'],
   [12.3, 13.2, "You can't even"],
   [13.2, 14.3, 'spend it yet.'],
+  [19.8, 21.2, 'That was the easy part.'],
+  [21.2, 22.7, 'Now the phone rings.'],
 ];
-function caption(t) {
+function captionInner(t) {
   const el = $('capText');
   const c = CAPS.find(c => t >= c[0] && t < c[1]);
   if (!c) { el.textContent = ''; return; }
@@ -332,14 +351,21 @@ function caption(t) {
   }).join('');
 }
 
-const SC = ['s1', 's2', 's3', 's4', 's5'];
+const SC = ['s1', 's2', 's3', 's4', 's5', 's6'];
 const show = n => SC.forEach(s => $(s).setAttribute('display', s === n ? 'inline' : 'none'));
 const money = n => '$' + Math.round(n).toLocaleString('en-US');
+
+function caption(t) {
+  captionInner(t);
+  const e = $('capText'), sh = $('capShadow');
+  sh.innerHTML = e.innerHTML.replace(/fill="#fff" fill-opacity="[^"]*"/g, 'fill="#000"');
+  sh.setAttribute('opacity', e.textContent ? .4 * (+e.getAttribute('opacity') || 0) : 0);
+}
 
 // ---- the timeline -----------------------------------------------------------
 function render(t) {
   // hard cuts, with a tiny flash on each
-  const cuts = [8.2, 10.4, 12.3, 14.4];
+  const cuts = [8.2, 10.4, 12.3, 14.4, 19.7];
   let f = 0;
   cuts.forEach(c => { const d = t - c; if (d >= 0 && d < .12) f = Math.max(f, .35 * (1 - d / .12)); });
   $('flash').setAttribute('opacity', f);
@@ -384,7 +410,7 @@ function render(t) {
       $('n' + i).setAttribute('opacity', seg(t, n[2], n[2] + .1));
       $('n' + i).setAttribute('transform', `translate(${n[3]} ${n[4] - 20 * p}) scale(${.6 + .4 * p})`);
     });
-  } else {
+  } else if (t < 19.7) {
     show('s5');
     const u = t - 14.4;
     // 1) one bill pops in
@@ -414,6 +440,15 @@ function render(t) {
       b1.setAttribute('opacity', 1); b2.setAttribute('opacity', 1);
     }
     $('legend').setAttribute('opacity', seg(u, 3.1, 3.5));
+  } else {
+    show('s6');
+    const u = t - 19.7;
+    $('phone6').setAttribute('transform', `translate(${270 + Math.sin(u * 60) * 3} ${560 + Math.sin(u * 7) * 2}) rotate(${Math.sin(u * 55) * 1.5})`);
+    for (let i = 0; i < 3; i++) {
+      const p = eb(seg(u, .5 + i * .35, .5 + i * .35 + .3));
+      $('b6' + i).setAttribute('opacity', seg(u, .5 + i * .35, .5 + i * .35 + .1));
+      $('b6' + i).setAttribute('transform', `translate(${[60, 300, 120][i]} ${[300, 380, 470][i] - 18 * p}) scale(${.6 + .4 * p})`);
+    }
   }
   caption(t);
 }
